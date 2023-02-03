@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Fashi.Context.Order>
+<div class="box">
+    <div class="box-header">
+        <p>
+           Danh Sách Đơn Hàng
+        </p>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        Người Nhận
+                    </th>
+                    <th>
+                        Thanh Toán
+                    </th>
+                    <th>
+                        Địa Chỉ
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NgayDat)
+                    </th>
+                   
+                    <th>
+                        Trạng Thái
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.Fullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tien)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaChi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NgayDat)
+                    </td>
+                   
+                    <td>
+                        @{if
+                          (item.TrangThai == "Giao Hàng Ngay")
+                            {
+
+                                <span class="label-success"> @Html.DisplayFor(modelItem => item.TrangThai)</span>
+                            }
+                            else
+                            {
+                                <span class="label-danger">@Html.DisplayFor(modelItem => item.TrangThai)</span>
+                            }
+                        }
+                    </td>
+
+                    <td>
+                        @{
+                            if (item.TrangThai == "Giao Hàng Ngay")
+                            {
+                                @Html.ActionLink("Tiến Hành Giao Hàng ", "Edit", new { id = item.Id }, new { @class = "btn btn-info" })
+                            }
+
+                            else if (item.TrangThai == "Đơn Hàng Đã Xử Lý")
+                            {
+
+                            }
+                        }
+                        | @Html.ActionLink("Chi Tiết Đơn Hàng", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
+
+
+                    </td>
+
+                </tr>
+                }
+            </tbody>      
+        </table>
+    </div>
+</div>
+<style>
+    .label-danger {
+        background: #FF6600;
+        color: white;
+    }
+    .label-success {
+        background: #00CC00;
+        color: white;
+    }
+
+</style>

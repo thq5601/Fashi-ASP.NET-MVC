@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Fashi.Context.blog>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thongtin1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mieuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chitiet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thongtin2)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        <div id="anh"><img src="@Url.Content("/Content/img/blog/"+item.anh)" width="100" height="100" style="border-radius:40px" /></div>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ngay)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.thongtin1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.mieuta)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.chitiet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.thongtin2)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,128 @@
+﻿@model Fashi.Context.Order
+
+@using Fashi.Context
+
+
+<h2>Chi Tiết Đơn Hàng</h2>
+
+<fieldset>
+
+    <div class="row">
+        @Html.HiddenFor(m => m.Id)
+        <div class="form-group col-sm-6">
+            <label>Khách Hàng</label>
+            @Html.TextBoxFor(m => m.CustomerId, new { @class = "form-control", @readonly = true })
+        </div>
+        <div class="form-group col-sm-6">
+            <label>Ngày Đặt</label>
+            @Html.TextBoxFor(m => m.NgayDat, "{0:yyyy-MM-dd}", new { @class = "form-control", @readonly = true })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label>Người Nhận</label>
+            @Html.TextBoxFor(m => m.NguoiNhan, new { @class = "form-control", @readonly = true })
+        </div>
+        <div class="form-group col-sm-6">
+            <label>Ngày Nhận</label>
+            @Html.TextBoxFor(m => m.NgayNhan, "{0:yyyy-MM-dd}", new { @class = "form-control nn-date", @readonly = true })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-6">
+            <label>Trạng Thái</label>
+            @Html.TextBoxFor(m => m.TrangThai, new { @class = "form-control", @readonly = true })
+        </div>
+        <div class="form-group col-sm-6">
+
+            <label>Amount</label>
+            @Html.TextBoxFor(m => m.Tien, new { @class = "form-control", @readonly = true })
+        </div>
+        <div class="form-group col-sm-6">
+            <label>Address</label>
+            @Html.TextBoxFor(m => m.DiaChi, new { @class = "form-control", @readonly = true })
+        </div>
+        <div class="form-group col-sm-6">
+            <label>Notes</label>
+            @Html.TextBoxFor(m => m.MieuTa, new { @class = "form-control", rows = 4, @readonly = true })
+        </div>
+
+    </div>
+
+</fieldset>
+
+
+
+<div class="box">
+    <div class="box-header">
+        <center>
+            <h3>Sản Phẩm Đã Đặt</h3>
+        </center>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th><strong style="color:mediumvioletred">Tên Sản Phẩm</strong></th>
+                    <th><strong style="color:mediumvioletred">Giá</strong></th>
+
+                    <th><strong style="color:mediumvioletred">Số Lượng</strong></th>
+                    <th><strong style="color:mediumvioletred">Tiền</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var detail in Model.OrderDetails)
+                {
+                    <tr>
+                        <td><strong style="color:black">@detail.product.ten</strong></td>
+                        <td><strong style="color:black">@detail.Gia</strong></td>
+
+                        <td><strong style="color:black">@detail.SoLuong</strong></td>
+                        <td><strong style="color:black">@(detail.SoLuong * detail.Gia) đ</strong></td>
+
+                    </tr>
+                }
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4" style="text-align:right"><strong style="color:red">Thanh Toán:</strong></th>
+                    <th style="color:black"> @Model.OrderDetails.Sum(b => b.SoLuong * b.Gia) đ </th>
+
+                </tr>
+
+
+            </tfoot>
+        </table>
+    </div>
+</div>
+<div class="clearfix"> </div>
+<div>
+    @Html.ActionLink("Quay Lại", "ListHoaDon")
+</div>
+<style>
+    .box-header {
+        background: transparent;
+        background: rgba(0, 0, 0, 0.1);
+        color: black;
+    }
+
+    .box-body {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        padding: 10px;
+    }
+</style>
+<script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
+        });
+</script>

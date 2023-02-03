@@ -1,0 +1,307 @@
+﻿@model Fashi.Model.BaseModel
+
+
+<body>
+    <!-- Hero Section Begin -->
+    <section class="hero-section">
+      
+        <div class="hero-items owl-carousel">
+            <div class="single-hero-items set-bg" data-setbg="/Content/img/hero/1890.jpg"></div>
+            @foreach (var slide in Model.listHero)
+            {
+                <div class="single-hero-items set-bg" data-setbg="/Content/img/hero/@slide.anh">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <span></span>
+                                <h1>@slide.tensk</h1>
+                                <p>
+                                    @slide.chitiet
+                                </p>
+                                <a href="#" class="primary-btn">Mua Ngay</a>
+                            </div>
+                        </div>
+                        <div class="off-card">
+                            <h2>@slide.tenchuongtrinh <span>@slide.phantram%</span></h2>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+
+
+    </section>
+    <!-- Hero Section End -->
+
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
+
+                @foreach (var banner in Model.lstBanner)
+                {
+                    <div class="col-lg-4">
+                        <div class="single-banner">
+                            <img src="~/Content/img/banner/@banner.anh" alt="">
+                            <div class="inner-text">
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Women Banner Section Begin -->
+    <section class="women-banner spad">
+        <div class="container-fluid">
+
+            <div class="row">
+                @foreach (var womenlage in Model.listWomenLange)
+                {
+                    <div class="col-lg-3">
+
+                        <div class="product-large set-bg" data-setbg="/Content/img/products/@womenlage.anh">
+                            <h2>@womenlage.ten</h2>
+                            <a href="@womenlage.link">@womenlage.mieuta</a>
+                        </div>
+                    </div>
+                }
+
+
+
+                <div class="col-lg-8 offset-lg-1">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Sản phẩm bán chạy</li>
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+
+
+                        @foreach (var pro in Model.listpro)
+                        {
+                            <div class="product-item">
+                                <div class="pi-pic">
+                                    <img src="~/Content/img/products/@pro.anhmh" alt="">
+                                    <div class="sale">@pro.ten</div>
+                                    <div class="icon">
+                                        <i class="icon_heart_alt"></i>
+                                    </div>
+                                    <ul>
+                                        <li class="w-icon active">
+                                            <a href="#"><i class="icon_bag_alt"></i></a>
+                                        </li>
+                                        <li class="quick-view"><a href="/Product/Index/@pro.id">Xem</a></li>
+                                        <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="pi-text">
+                                    <div class="catagory-name">@pro.mieuta</div>
+                                    <a href="#">
+                                        <h5>@pro.gioithieu</h5>
+                                    </a>
+                                    <div class="product-price">
+                                       @String.Format("{0:0,0}", pro.giagiam)đ <span>@String.Format("{0:0,0}", pro.giaban)đ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Women Banner Section End -->
+    <section class="deal-of-week set-bg spad" data-setbg="/Content/img/time/giaybaner.jpg" style="background-image;">
+        <div class="container">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h2>Giảm Giá Hàng Tuần</h2>
+                    <p>
+                        Black Friday đồng giá
+                       
+                    </p>
+                    <div class="product-price">
+                        1.000.000đ
+                        <span>/ Sản phẩm </span>
+                    </div>
+                </div>
+                <div class="countdown-timer" id="countdown"><div class="cd-item"><span>29</span> <p>Ngày</p> </div><div class="cd-item"><span>03</span> <p>Giờ</p> </div><div class="cd-item"><span>26</span> <p>Phút</p> </div><div class="cd-item"><span>04</span> <p>Giây</p> </div></div>
+                <a href="#" class="primary-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Man Banner Section Begin -->
+    <section class="man-banner spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="filter-control">
+                        <ul>
+                            <li class="active">Sản Phẩm Mới</li>
+
+                        </ul>
+                    </div>
+                    <div class="product-slider owl-carousel">
+
+                        @foreach (var pro in Model.listpro)
+                        {
+                            <div class="product-item">
+                                <div class="pi-pic">
+                                    <img src="~/Content/img/products/@pro.anhmh" alt="">
+                                    <div class="sale">@pro.ten</div>
+                                    <div class="icon">
+                                        <i class="icon_heart_alt"></i>
+                                    </div>
+                                    <ul>
+                                        <li class="w-icon active">
+                                            <a href="#"><i class="icon_bag_alt"></i></a>
+                                        </li>
+                                        <li class="quick-view"><a href="/Product/Index/@pro.id">Xem</a></li>
+                                        <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="pi-text">
+                                    <div class="catagory-name">@pro.mieuta</div>
+                                    <a href="#">
+                                        <h5>@pro.gioithieu</h5>
+                                    </a>
+                                    <div class="product-price">
+                                        @String.Format("{0:0,0}", pro.giagiam)đ <span>@String.Format("{0:0,0}", pro.giaban)đ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+
+                    @foreach (var men in Model.listMenLange)
+                    {
+                        <div class="product-large set-bg m-large" data-setbg="/Content/img/products/@men.anh">
+                            <h2>@men.ten</h2>
+                            <a href="@men.link">@men.mieuta</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Man Banner Section End -->
+    <div class="instagram-photo">
+        @foreach (var ita in Model.listItagram)
+        {
+            <div class="insta-item set-bg" data-setbg="/Content/img/insta/@ita.anh" style="background-image;">
+                <div class="inside-text">
+                    <i class="ti-instagram"></i>
+                    <h5><a href="@ita.link">@ita.mieuta</a></h5>
+                </div>
+            </div>
+        }
+    </div>
+    <section class="latest-blog spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Giới Thiệu Blog</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var late in Model.listLatest)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-latest-blog">
+                            <img src="~/Content/img/latest/@late.anh" />
+
+                            <div class="latest-text">
+                                <div class="tag-list">
+                                    <div class="tag-item">
+                                        <i class="fa fa-calendar-o"></i>
+                                        @late.ngay
+                                    </div>
+                                    <div class="tag-item">
+                                        <i class="fa fa-comment-o"></i>
+                                        5
+                                    </div>
+                                </div>
+                                <a href="#">
+                                    <h4>@late.mieuta</h4>
+                                </a>
+                                <p>@late.chitiet</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="benefit-items">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="~/Content/img/icon/icon-1.png" />
+                            </div>
+                            <div class="sb-text">
+                                <h6>Miễn Phí Giao Hàng</h6>
+                                <p>Tất Cả Đơn Hàng Trên 300k</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="~/Content/img/icon/icon-2.png" />
+                            </div>
+                            <div class="sb-text">
+                                <h6>Giao Hàng Tiện Lợi</h6>
+                                <p>Nhanh-Rẻ-Khỏe</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="single-benefit">
+                            <div class="sb-icon">
+                                <img src="~/Content/img/icon/icon-3.png" />
+                            </div>
+                            <div class="sb-text">
+                                <h6>Thanh Toán Bằng Thẻ</h6>
+                                <p>An Toàn-Bảo Mật</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="partner-logo">
+        <div class="container">
+            <div class="logo-carousel owl-carousel owl-loaded">
+
+
+
+
+
+                <div class="owl-stage-outer">
+                    <div class="owl-stage" style="transform: translate3d(-171px, 0px, 0px); transition: all 1.2s ease 0s; width: 859px;">
+                        @foreach (var logopart in Model.listLogoPartem)
+                        {
+
+                            <div class="owl-item" style="width: 141.667px; margin-right: 30px;">
+                                <div class="logo-item">
+                                    <div class="tablecell-inner">
+                                        <img src="~/Content/img/logo-carousel/@logopart.anh" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                        </div>
+                </div><div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="ti-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="ti-angle-right"></i></button></div><div class="owl-dots disabled"></div>
+            </div>
+        </div>
+    </div>
+</body>

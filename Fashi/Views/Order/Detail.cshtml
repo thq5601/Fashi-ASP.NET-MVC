@@ -1,0 +1,104 @@
+﻿@model Fashi.Context.Order
+<div class="content">
+    <div class="products-agileinfo">
+        <center>
+            <h2 class="tittle">ĐẶT HÀNG THÀNH CÔNG!</h2>
+        </center>
+        <div class="container">
+            <div class="product-agileinfo-grids w3l">
+
+
+                <div class="col-md-9 product-agileinfon-grid1">
+
+                    <h2>Chi Tiết Đơn Hàng</h2>
+
+                    <fieldset>
+
+                        <div class="row">
+                            @Html.HiddenFor(m => m.Id)
+                            <div class="form-group col-sm-6">
+                                <label>Khách Hàng</label>
+                                @Html.TextBoxFor(m => m.CustomerId, new { @class = "form-control", @readonly = true })
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>Ngày Đặt</label>
+                                @Html.TextBoxFor(m => m.NgayDat, "{0:yyyy-MM-dd}", new { @class = "form-control", @readonly = true })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label>Người Nhận</label>
+                                @Html.TextBoxFor(m => m.NguoiNhan, new { @class = "form-control", @readonly = true })
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>Ngày Nhận</label>
+                                @Html.TextBoxFor(m => m.NgayNhan, "{0:yyyy-MM-dd}", new { @class = "form-control nn-date", @readonly = true })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label>Vui Lòng Điền Địa Chỉ Và Số Điện Thoại</label>
+                                @Html.TextBoxFor(m => m.DiaChi, new { @class = "form-control", @readonly = true })
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>Thanh Toán</label>
+                                @Html.TextBoxFor(m => m.Tien, new { @class = "form-control", @readonly = true })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <label>Ghi Chú</label>
+                                @Html.TextAreaFor(m => m.MieuTa, new { @class = "form-control", rows = 4, @readonly = true })
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <h2>Đơn Hàng Đã Đặt</h2>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th><strong style="color:mediumvioletred">Tên</strong></th>
+                                    <th><strong style="color:mediumvioletred">Giá</strong></th>
+
+                                    <th><strong style="color:mediumvioletred">Số Lượng</strong></th>
+                                    <th><strong style="color:mediumvioletred">Thành Tiền</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var detail in Model.OrderDetails)
+                                {
+                                    <tr>
+                                        <td><strong style="color:black">@detail.product.ten</strong></td>
+                                        <td>
+                                            <strong style="color:black">
+                                                @String.Format("{0:0,0}", detail.Gia)
+                                            </strong>
+                                        </td>
+                                        <td><strong style="color:black">@detail.SoLuong</strong></td>
+                                        <td>
+                                            <strong style="color:black">
+                                                @String.Format("{0:0,0}", (detail.SoLuong * detail.Gia)) đ
+                                            </strong>
+                                        </td>
+
+                                    </tr>
+                                }
+                                <tr>
+                                    <th colspan="4" style="text-align:right"><strong style="color:red">Thanh Toán:</strong></th>
+                                    <th style="color:black">
+                                        <center>
+                                            @String.Format("{0:0,0}", Model.OrderDetails.Sum(b => b.SoLuong * b.Gia)) đ
+                                        </center>
+                                    </th>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>

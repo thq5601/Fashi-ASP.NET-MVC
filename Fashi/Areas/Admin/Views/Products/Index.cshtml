@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Fashi.Context.product>
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaban)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giagiam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phantram)
+        </th>
+        <th>
+      
+            @Html.DisplayNameFor(model => model.mieuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chitiet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gioithieu)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.anhmh)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.ngaytao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaycapnhat)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ten)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.soluong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.giaban)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.giagiam)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.phantram)
+    </td>
+    <td>
+        @Html.Raw(item.mieuta)
+    </td>
+    <td>
+        @Html.Raw(item.chitiet)
+
+    </td>
+    <td>
+        @Html.Raw(item.gioithieu)
+
+    </td>
+
+  
+    <td>
+        <div id="anh"><img src="@Url.Content("/Content/img/products/"+item.anhmh)" width="100" height="100" style="border-radius:40px" /></div>
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ngaytao)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ngaycapnhat)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+    </td>
+</tr>
+    }
+
+</table>

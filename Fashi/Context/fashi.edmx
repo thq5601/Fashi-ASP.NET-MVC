@@ -1,0 +1,966 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="fashiEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bannersections">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="blogs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ngay" Type="datetime" Nullable="false" />
+          <Property Name="thongtin1" Type="nvarchar" MaxLength="255" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" />
+          <Property Name="chitiet" Type="nvarchar" MaxLength="255" />
+          <Property Name="thongtin2" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="categorys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Activated" Type="bit" />
+        </EntityType>
+        <EntityType Name="instagrams">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="latests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ngay" Type="datetime" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="chitiet" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="thongtin" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="icon" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="muc" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh4">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="muc" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="manbanners">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="sale" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="link1" Type="nvarchar" MaxLength="255" />
+          <Property Name="link2" Type="nvarchar" MaxLength="255" />
+          <Property Name="thaotac" Type="nvarchar" MaxLength="255" />
+          <Property Name="link3" Type="nvarchar" MaxLength="255" />
+          <Property Name="theloai" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="link4" Type="nvarchar" MaxLength="255" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="giaban" Type="float" Nullable="false" />
+          <Property Name="giagiam" Type="float" />
+        </EntityType>
+        <EntityType Name="manlarges">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="menus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Gia" Type="float" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NgayDat" Type="datetime" Nullable="false" />
+          <Property Name="NgayNhan" Type="datetime" Nullable="false" />
+          <Property Name="NguoiNhan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="MieuTa" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Tien" Type="float" Nullable="false" />
+          <Property Name="TrangThai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="partners">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_categorys" Type="int" />
+          <Property Name="size" Type="nvarchar" MaxLength="255" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="giaban" Type="int" />
+          <Property Name="giagiam" Type="int" />
+          <Property Name="phantram" Type="int" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" />
+          <Property Name="chitiet" Type="nvarchar" MaxLength="255" />
+          <Property Name="gioithieu" Type="nvarchar" MaxLength="255" />
+          <Property Name="dactrung" Type="nvarchar" MaxLength="255" />
+          <Property Name="anhmh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="cannang" Type="nvarchar" MaxLength="255" />
+          <Property Name="noibat" Type="bit" />
+          <Property Name="spmoi" Type="bit" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="ngaycapnhat" Type="datetime" />
+        </EntityType>
+        <EntityType Name="slides">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="tensk" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="chitiet" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="cuahang" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="tenchuongtrinh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="phantram" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="womenbanners">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="sale" Type="nvarchar" MaxLength="255" />
+          <Property Name="link1" Type="nvarchar" MaxLength="255" />
+          <Property Name="link2" Type="nvarchar" MaxLength="255" />
+          <Property Name="thaotac" Type="nvarchar" MaxLength="255" />
+          <Property Name="link3" Type="nvarchar" MaxLength="255" />
+          <Property Name="theloai" Type="nvarchar" MaxLength="255" />
+          <Property Name="link4" Type="nvarchar" MaxLength="255" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" />
+          <Property Name="giaban" Type="float" Nullable="false" />
+          <Property Name="giagiam" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="womenlarges">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="anh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ten" Type="nvarchar" MaxLength="255" />
+          <Property Name="link" Type="nvarchar" MaxLength="255" />
+          <Property Name="mieuta" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__OrderDeta__Order__18B6AB08">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__Produ__1B9317B3">
+          <End Role="products" Type="Self.products" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__Customer__1C873BEC">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="fashiEntitiesStoreContainer">
+          <EntitySet Name="bannersections" EntityType="Self.bannersections" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="blogs" EntityType="Self.blogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="categorys" EntityType="Self.categorys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="instagrams" EntityType="Self.instagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="latests" EntityType="Self.latests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lh1" EntityType="Self.lh1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lh2" EntityType="Self.lh2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lh3" EntityType="Self.lh3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lh4" EntityType="Self.lh4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="manbanners" EntityType="Self.manbanners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="manlarges" EntityType="Self.manlarges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="menus" EntityType="Self.menus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="partners" EntityType="Self.partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="slides" EntityType="Self.slides" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="womenbanners" EntityType="Self.womenbanners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="womenlarges" EntityType="Self.womenlarges" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__OrderDeta__Order__18B6AB08" Association="Self.FK__OrderDeta__Order__18B6AB08">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__Produ__1B9317B3" Association="Self.FK__OrderDeta__Produ__1B9317B3">
+            <End Role="products" EntitySet="products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__Customer__1C873BEC" Association="Self.FK__Orders__Customer__1C873BEC">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fashiEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bannersection">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="blog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="thongtin1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chitiet" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="thongtin2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Activated" Type="Boolean" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Customer__1C873BEC" FromRole="Customers" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="instagram">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="latest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="chitiet" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="thongtin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="icon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh3">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="muc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="lh4">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="muc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="manbanner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sale" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="link1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="thaotac" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="theloai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="link4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="giaban" Type="Double" Nullable="false" />
+          <Property Name="giagiam" Type="Double" />
+        </EntityType>
+        <EntityType Name="manlarge">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Gia" Type="Double" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__OrderDeta__Order__18B6AB08" FromRole="OrderDetails" ToRole="Orders" />
+          <NavigationProperty Name="product" Relationship="Self.FK__OrderDeta__Produ__1B9317B3" FromRole="OrderDetails" ToRole="products" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NgayDat" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NgayNhan" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NguoiNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MieuTa" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Tien" Type="Double" Nullable="false" />
+          <Property Name="TrangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Orders__Customer__1C873BEC" FromRole="Orders" ToRole="Customers" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Order__18B6AB08" FromRole="Orders" ToRole="OrderDetails" />
+        </EntityType>
+        <EntityType Name="partner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_categorys" Type="Int32" />
+          <Property Name="size" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="giaban" Type="Int32" />
+          <Property Name="giagiam" Type="Int32" />
+          <Property Name="phantram" Type="Int32" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="chitiet" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gioithieu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="dactrung" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="anhmh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cannang" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="noibat" Type="Boolean" />
+          <Property Name="spmoi" Type="Boolean" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="ngaycapnhat" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Produ__1B9317B3" FromRole="products" ToRole="OrderDetails" />
+        </EntityType>
+        <EntityType Name="slide">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tensk" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="chitiet" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cuahang" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenchuongtrinh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phantram" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="womenbanner">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sale" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="thaotac" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="theloai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="giaban" Type="Double" Nullable="false" />
+          <Property Name="giagiam" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="womenlarge">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="anh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="link" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="mieuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Orders__Customer__1C873BEC">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__Order__18B6AB08">
+          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__Produ__1B9317B3">
+          <End Role="products" Type="Self.product" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="products">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="fashiEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bannersections" EntityType="Self.bannersection" />
+          <EntitySet Name="blogs" EntityType="Self.blog" />
+          <EntitySet Name="categorys" EntityType="Self.category" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="instagrams" EntityType="Self.instagram" />
+          <EntitySet Name="latests" EntityType="Self.latest" />
+          <EntitySet Name="lh1" EntityType="Self.lh1" />
+          <EntitySet Name="lh2" EntityType="Self.lh2" />
+          <EntitySet Name="lh3" EntityType="Self.lh3" />
+          <EntitySet Name="lh4" EntityType="Self.lh4" />
+          <EntitySet Name="manbanners" EntityType="Self.manbanner" />
+          <EntitySet Name="manlarges" EntityType="Self.manlarge" />
+          <EntitySet Name="menus" EntityType="Self.menu" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="partners" EntityType="Self.partner" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="slides" EntityType="Self.slide" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="womenbanners" EntityType="Self.womenbanner" />
+          <EntitySet Name="womenlarges" EntityType="Self.womenlarge" />
+          <AssociationSet Name="FK__Orders__Customer__1C873BEC" Association="Self.FK__Orders__Customer__1C873BEC">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__Order__18B6AB08" Association="Self.FK__OrderDeta__Order__18B6AB08">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__Produ__1B9317B3" Association="Self.FK__OrderDeta__Produ__1B9317B3">
+            <End Role="products" EntitySet="products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fashiEntitiesStoreContainer" CdmEntityContainer="fashiEntities2">
+          <EntitySetMapping Name="bannersections">
+            <EntityTypeMapping TypeName="fashiEntities.bannersection">
+              <MappingFragment StoreEntitySet="bannersections">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blogs">
+            <EntityTypeMapping TypeName="fashiEntities.blog">
+              <MappingFragment StoreEntitySet="blogs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="ngay" ColumnName="ngay" />
+                <ScalarProperty Name="thongtin1" ColumnName="thongtin1" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+                <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+                <ScalarProperty Name="thongtin2" ColumnName="thongtin2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categorys">
+            <EntityTypeMapping TypeName="fashiEntities.category">
+              <MappingFragment StoreEntitySet="categorys">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="link" ColumnName="link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="fashiEntities.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="instagrams">
+            <EntityTypeMapping TypeName="fashiEntities.instagram">
+              <MappingFragment StoreEntitySet="instagrams">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="latests">
+            <EntityTypeMapping TypeName="fashiEntities.latest">
+              <MappingFragment StoreEntitySet="latests">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="ngay" ColumnName="ngay" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+                <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lh1">
+            <EntityTypeMapping TypeName="fashiEntities.lh1">
+              <MappingFragment StoreEntitySet="lh1">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="thongtin" ColumnName="thongtin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lh2">
+            <EntityTypeMapping TypeName="fashiEntities.lh2">
+              <MappingFragment StoreEntitySet="lh2">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lh3">
+            <EntityTypeMapping TypeName="fashiEntities.lh3">
+              <MappingFragment StoreEntitySet="lh3">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="muc" ColumnName="muc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lh4">
+            <EntityTypeMapping TypeName="fashiEntities.lh4">
+              <MappingFragment StoreEntitySet="lh4">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="muc" ColumnName="muc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="manbanners">
+            <EntityTypeMapping TypeName="fashiEntities.manbanner">
+              <MappingFragment StoreEntitySet="manbanners">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="sale" ColumnName="sale" />
+                <ScalarProperty Name="link1" ColumnName="link1" />
+                <ScalarProperty Name="link2" ColumnName="link2" />
+                <ScalarProperty Name="thaotac" ColumnName="thaotac" />
+                <ScalarProperty Name="link3" ColumnName="link3" />
+                <ScalarProperty Name="theloai" ColumnName="theloai" />
+                <ScalarProperty Name="link4" ColumnName="link4" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+                <ScalarProperty Name="giaban" ColumnName="giaban" />
+                <ScalarProperty Name="giagiam" ColumnName="giagiam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="manlarges">
+            <EntityTypeMapping TypeName="fashiEntities.manlarge">
+              <MappingFragment StoreEntitySet="manlarges">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="menus">
+            <EntityTypeMapping TypeName="fashiEntities.menu">
+              <MappingFragment StoreEntitySet="menus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="link" ColumnName="link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="fashiEntities.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="fashiEntities.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+                <ScalarProperty Name="NgayNhan" ColumnName="NgayNhan" />
+                <ScalarProperty Name="NguoiNhan" ColumnName="NguoiNhan" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="MieuTa" ColumnName="MieuTa" />
+                <ScalarProperty Name="Tien" ColumnName="Tien" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="partners">
+            <EntityTypeMapping TypeName="fashiEntities.partner">
+              <MappingFragment StoreEntitySet="partners">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="fashiEntities.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_categorys" ColumnName="id_categorys" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="giaban" ColumnName="giaban" />
+                <ScalarProperty Name="giagiam" ColumnName="giagiam" />
+                <ScalarProperty Name="phantram" ColumnName="phantram" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+                <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+                <ScalarProperty Name="gioithieu" ColumnName="gioithieu" />
+                <ScalarProperty Name="dactrung" ColumnName="dactrung" />
+                <ScalarProperty Name="anhmh" ColumnName="anhmh" />
+                <ScalarProperty Name="cannang" ColumnName="cannang" />
+                <ScalarProperty Name="noibat" ColumnName="noibat" />
+                <ScalarProperty Name="spmoi" ColumnName="spmoi" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="slides">
+            <EntityTypeMapping TypeName="fashiEntities.slide">
+              <MappingFragment StoreEntitySet="slides">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="tensk" ColumnName="tensk" />
+                <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+                <ScalarProperty Name="cuahang" ColumnName="cuahang" />
+                <ScalarProperty Name="tenchuongtrinh" ColumnName="tenchuongtrinh" />
+                <ScalarProperty Name="phantram" ColumnName="phantram" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="fashiEntities.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="womenbanners">
+            <EntityTypeMapping TypeName="fashiEntities.womenbanner">
+              <MappingFragment StoreEntitySet="womenbanners">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="sale" ColumnName="sale" />
+                <ScalarProperty Name="link1" ColumnName="link1" />
+                <ScalarProperty Name="link2" ColumnName="link2" />
+                <ScalarProperty Name="thaotac" ColumnName="thaotac" />
+                <ScalarProperty Name="link3" ColumnName="link3" />
+                <ScalarProperty Name="theloai" ColumnName="theloai" />
+                <ScalarProperty Name="link4" ColumnName="link4" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+                <ScalarProperty Name="giaban" ColumnName="giaban" />
+                <ScalarProperty Name="giagiam" ColumnName="giagiam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="womenlarges">
+            <EntityTypeMapping TypeName="fashiEntities.womenlarge">
+              <MappingFragment StoreEntitySet="womenlarges">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="anh" ColumnName="anh" />
+                <ScalarProperty Name="ten" ColumnName="ten" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="mieuta" ColumnName="mieuta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="fashiEntities.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="fashiEntities.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="fashiEntities.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="fashiEntities.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="fashiEntities.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="fashiEntities.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="fashiEntities.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

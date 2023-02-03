@@ -1,0 +1,93 @@
+﻿@model Fashi.Context.blog
+
+@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Content/js/ckeditor.js"></script>
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Blogs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>blog</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.anh, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="ImageUpload" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ngay, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ngay, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+            @Html.ValidationMessageFor(model => model.ngay, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.thongtin1, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div ass="col-md-10">
+            @Html.TextAreaFor(model => model.thongtin1, new { htmlAttributes = new { @class = "form-control" }, id = "ck1" })
+            <script>
+                CKEDITOR.replace("ck1");
+            </script>
+            @Html.ValidationMessageFor(model => model.thongtin1, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.mieuta, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div ass="col-md-10">
+            @Html.TextAreaFor(model => model.mieuta, new { htmlAttributes = new { @class = "form-control" }, id = "ck2" })
+            <script>
+                CKEDITOR.replace("ck2");
+            </script>
+            @Html.ValidationMessageFor(model => model.mieuta, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.chitiet, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div ass="col-md-10">
+            @Html.TextAreaFor(model => model.chitiet, new { htmlAttributes = new { @class = "form-control" }, id = "ck3" })
+            <script>
+                CKEDITOR.replace("ck3");
+            </script>
+            @Html.ValidationMessageFor(model => model.chitiet, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.thongtin2, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div ass="col-md-10">
+            @Html.TextAreaFor(model => model.thongtin2, new { htmlAttributes = new { @class = "form-control" }, id = "ck4" })
+            <script>
+                CKEDITOR.replace("ck4");
+            </script>
+            @Html.ValidationMessageFor(model => model.thongtin2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

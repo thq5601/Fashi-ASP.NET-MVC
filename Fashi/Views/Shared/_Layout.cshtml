@@ -1,0 +1,248 @@
+﻿
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashi Template">
+    <meta name="keywords" content="Fashi, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fashi | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css">
+</head>
+<header class="header-section">
+    <div class="header-top">
+        <div class="container">
+            <div class="ht-left">
+                <div class="mail-service">
+                    <i class=" fa fa-envelope"></i>
+                    hello.Fashi.com
+                </div>
+                <div class="phone-service">
+                    <i class=" fa fa-phone"></i>
+                    +0989 9919
+                </div>
+            </div>
+            <div class="ht-right">
+                @if (!XUser.Authenticated)
+                {
+                    <a href="/Account/Login" class="login-panel"><i class="fa fa-user"></i>Tài Khoản</a>
+                }
+                else
+                {
+                    <a href="/Account/Logout" class="login-panel"><i class="fa fa-user"></i>@Session["Id"]</a>
+                }
+
+                <div class="lan-selector">
+                    <select class="language_drop" name="countries" id="countries" style="width:300px;">
+                        <option value='yt' data-image="/Content/img/flag/flag-1.jpg" data-imagecss="flag yt"
+                                data-title="English">
+
+                            English
+                        </option>
+                        
+                    </select>
+                </div>
+                <style id="cart-fly">
+                </style>
+                <div class="top-social">
+                    <a href="#"><i class="ti-facebook"></i></a>
+                    <a href="#"><i class="ti-twitter-alt"></i></a>
+                    <a href="#"><i class="ti-linkedin"></i></a>
+                    <a href="#"><i class="ti-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="inner-header">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="logo" style="margin-top:-30px;">
+                        <a href="./index.html">
+                            <img src="~/Content/img/logo/logo2.gif" alt="" >
+                        </a>
+                    </div>
+                </div>
+                @Html.Partial("_Search")
+                <div class="col-lg-3 text-right col-md-3">
+                    <ul class="nav-right">
+                        <li class="heart-icon">
+                            <a href="#">
+                                <i class="icon_heart_alt"></i>
+                                <span>1</span>
+                            </a>
+                        </li>
+                        <li class="cart-icon">
+                            <a href="/Cart/Index">
+                                <i class="icon_bag_alt"> </i>
+                                <span id="cart-cnt">
+                                
+                                @ShoppingCart.Cart.Count </span>
+
+
+
+                            </a>
+                            <span id="cart-amt">
+                                @String.Format("{0:0,0}", ShoppingCart.Cart.Amount)
+                                
+                            </span>đ
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-item">
+        <div class="container">
+            <!--<div class="nav-depart">
+                <div class="depart-btn">-->
+                    @*<i class="ti-menu"></i>*@
+                    @*<span>Tất Cả Các Mục</span>*@
+                    @*   <ul class="depart-hover">
+                            <li class="active"><a href="#">Women’s Clothing</a></li>
+                            <li><a href="#">Men’s Clothing</a></li>
+                            <li><a href="#">Underwear</a></li>
+                            <li><a href="#">Kid's Clothing</a></li>
+                            <li><a href="#">Brand Fashion</a></li>
+                            <li><a href="#">Accessories/Shoes</a></li>
+                            <li><a href="#">Luxury Brands</a></li>
+                            <li><a href="#">Brand Outdoor Apparel</a></li>
+                        </ul>*@
+                <!--</div>
+            </div>-->
+            <nav class="nav-menu mobile-menu">
+                <ul>
+                    <li class="active"><a href="/Home/Index">Trang Chủ</a></li>
+                    <li><a href="/Shop/Index">Cửa Hàng</a></li>
+
+                    <li><a href="/Blog/Index">Blog</a></li>
+                    <li><a href="/Contact/Index">Liên Hệ</a></li>
+
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </div>
+</header>
+
+@RenderBody()
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            xfbml: true,
+            version: 'v10.0'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+     attribution="setup_tool"
+     page_id="100175695407467">
+</div>
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <a href="#"><img src="~/Content/img/logo/Fashi_Logo.gif" alt="" style="margin-top:-90px;"></a>
+                    </div>
+                    <div style="margin-top:-100px;">
+                        <ul>
+                            <li>Địa Chỉ: 828 Sư Vạn Hạnh.Tp HCM</li>
+                            <li>Phone: 0989 9919 </li>
+                            <li>Email: hello.Fashi@gmail.com</li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1">
+                <div class="footer-widget">
+                    <h5>Thông Tin</h5>
+                    <ul>
+                        <li><a href="#">Về Chúng Tôi</a></li>
+                        <li><a href="#">Thông Tin Giao Hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="footer-widget">
+                    <h5>Tài Khoản</h5>
+                    <ul>
+                        <li><a href="#">Tài Khoản Của Tôi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="newslatter-item">
+                    <h5>
+                        Tham gia bản tin của chúng tôi ngay bây giờ
+                    </h5>
+                    <p>Gủi Mail Cập Nhật Thiếu Sót, Nhận Quà Đặc Bệt.</p>
+                    <form action="#" class="subscribe-form">
+                        <input type="text" placeholder="Nhập Mail Của Bạn">
+                        <button type="button">Gửi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright-reserved">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        
+                        
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+<script src="~/Content/js/jquery-3.3.1.min.js"></script>
+<script src="~/Content/js/bootstrap.min.js"></script>
+<script src="~/Content/js/jquery-ui.min.js"></script>
+<script src="~/Content/js/jquery.countdown.min.js"></script>
+<script src="~/Content/js/jquery.nice-select.min.js"></script>
+<script src="~/Content/js/jquery.zoom.min.js"></script>
+<script src="~/Content/js/jquery.dd.min.js"></script>
+<script src="~/Content/js/jquery.slicknav.js"></script>
+<script src="~/Content/js/owl.carousel.min.js"></script>
+<script src="~/Content/js/main.js"></script>
+<script src="~/Content/js/shopping-cart.js"></script>
+</html>

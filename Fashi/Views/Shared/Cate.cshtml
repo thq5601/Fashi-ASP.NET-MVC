@@ -1,0 +1,8 @@
+﻿@model Fashi.Model.BaseModel
+
+<ul class="depart-hover">
+    @foreach (var pro in Model.listCate)
+    {
+        <li class=""><a href="@pro.link">@pro.ten</a></li>
+    }
+    </ul>

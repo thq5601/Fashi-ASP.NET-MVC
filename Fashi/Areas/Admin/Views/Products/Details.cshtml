@@ -1,0 +1,118 @@
+﻿@model Fashi.Context.product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi Tiết</h2>
+
+
+
+
+
+
+
+<table class="table">
+    <tr>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaban)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giagiam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phantram)
+        </th>
+        <th>
+
+            @Html.DisplayNameFor(model => model.mieuta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chitiet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gioithieu)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.anhmh)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.ngaytao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaycapnhat)
+        </th>
+        <th></th>
+    </tr>
+
+    <tr>
+
+
+        <th>
+            @Html.DisplayFor(model => model.ten)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.soluong)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.giaban)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.giagiam)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.phantram)
+        </th>
+        <th>
+
+            @Html.DisplayFor(model => model.mieuta)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.chitiet)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.gioithieu)
+        </th>
+
+        <th>
+            @Html.DisplayFor(model => model.anhmh)
+        </th>
+
+
+        <th>
+            @Html.DisplayFor(model => model.ngaytao)
+        </th>
+        <th>
+            @Html.DisplayFor(model => model.ngaycapnhat)
+        </th>
+        <th></th>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Quay Lại", "Index")
+    </p>
